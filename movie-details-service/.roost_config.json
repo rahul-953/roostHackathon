@@ -1,0 +1,17 @@
+{
+  "yamlConfig": [
+    {
+      "source": "local",
+      "yaml": "/Users/kennedy/Downloads/movie-details-service-2/moviedetails.yaml",
+      "namespace": "default",
+      "status": "deployed"
+    }
+  ],
+  "dockerConfig": [
+    {
+      "source": "local",
+      "dockerImage": "movie-details-service:latest",
+      "dockerFile": "/Users/kennedy/Downloads/movie-details-service-2/Dockerfile"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Movies</title>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+</head>
+
+<body style="background-color: #111111;">
+	<table class="table table-striped table-primary">
+		<thead class="ttop">
+			<tr th:style="'background-color: gray;'">
+				<th>Image</th>
+				<th>Title</th>
+				<th>Trailer Link</th>
+				<th>Year</th>
+				<th>Length</th>
+				<th>Rating</th>
+				<th>Votes</th>
+				<th>Imdb Id</th>
+				<th>Plot</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:if="${movies.empty}">
+				<td colspan="2">No Movies Available</td>
+			</tr>
+			<tr th:each="movie, iStat : ${movies}"
+				th:style="${iStat.odd} ? 'background-color: #0099cc' : 'background-color: gray;'">
+				<td><img th:src="${movie.poster}" alt="Image" width="120"
+					height="150" /></td>
+				<td width="100px" align="center"><span th:text="${movie.title}">
+						Title </span></td>
+				<td width="100px" align="center"><a
+					th:href="${movie.trailerLink}" target="_blank" /> Trailer</td>
+				<td width="100px" align="center"><span th:text="${movie.year}">
+						Year </span></td>
+				<td width="100px" align="center"><span
+					th:text="${movie.length}"> Length </span></td>
+				<td width="100px" align="center"><span
+					th:text="${movie.rating}"> Ratings </span></td>
+				<td width="100px" align="center"><span
+					th:text="${movie.ratingVotes}"> Votes </span></td>
+				<td width="100px" align="center"><span
+					th:text="${movie.imdbId}"> Imdb Id </span></td>
+				<td><span th:text="${movie.Plot}"> Plot </span></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
